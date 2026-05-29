@@ -37,7 +37,10 @@ const Navbar = () => {
     }
   };
 
-
+  const handleLogout = () => {
+    setUserMenuOpen(false);
+    router.push("/");
+  };
 
   return (
     <nav className=" bg-white sticky top-0 z-50 border-b border-green-600">
