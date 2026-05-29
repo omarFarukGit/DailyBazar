@@ -131,44 +131,38 @@ const Navbar = () => {
                     )}
                     <div onClick={() => setUserMenuOpen(false)}>
                       {!user && (
-                        <Link href={"/login"} className="dropdown-link flex">
+                        <Link href={"/login"} className="dropdown-link ">
                           <UserIcon size={16} /> SignIn
                         </Link>
                       )}
 
                       {user && (
-                        <Link
-                          href={"/orders"}
-                          className=" drop-down-link flex items-center"
-                        >
+                        <Link href={"/orders"} className=" dropdown-link">
                           <PackageIcon size={16} /> My Orders
                         </Link>
                       )}
 
                       {user && (
-                        <Link
-                          href={"/address"}
-                          className=" drop-down-link flex items-center "
-                        >
+                        <Link href={"/address"} className=" dropdown-link  ">
                           <MapPinIcon size={16} /> Address
                         </Link>
                       )}
                       <Link
                         href={"/products"}
-                        className=" drop-down-link flex items-center md:hidden"
+                        className=" dropdown-link md:hidden"
                       >
                         <ArrowUpRightIcon size={16} /> Products
                       </Link>
                       <Link
                         href={"/deals"}
-                        className=" drop-down-link flex items-center md:hidden"
+                        className=" dropdown-link md:hidden"
                       >
                         <ArrowUpRightIcon size={16} /> Deals
                       </Link>
                       {user?.isAdmin && (
                         <Link
                           href={"/admin/products"}
-                          className=" drop-down-link flex items-center"
+                          className=" dropdown-link"
                         >
                           <ShieldIcon size={16} />{" "}
                           <span className=" text-orange-800">Admin Pannel</span>
