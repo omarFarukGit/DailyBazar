@@ -29,6 +29,16 @@ const Navbar = () => {
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const router = useRouter();
 
+  const handleSearch = (e: React.SubmitEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery("");
+    }
+  };
+
+
+
   return (
     <nav className=" bg-white sticky top-0 z-50 border-b border-green-600">
       <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 h-16 relative">
@@ -51,7 +61,10 @@ const Navbar = () => {
           </div>
           {/* seacrh  */}
 
-          <form className=" hidden sm:flex flex-1 max-w-sm text-xs sm:text-sm">
+          <form
+            onSubmit={handleSearch}
+            className=" hidden sm:flex flex-1 max-w-sm text-xs sm:text-sm"
+          >
             <div className=" relative w-full">
               <SearchIcon className=" absolute left-2.5 top-1/2 -translate-y-1/2 size-4 text-zinc-500" />
               <input
@@ -170,7 +183,10 @@ const Navbar = () => {
                       )}
                       {user && (
                         <div className=" border-t pt-1">
-                          <button className=" flex items-center gap-3 ps-4 py-2.5 text-sm w-full">
+                          <button
+                            onClick={handleLogout}
+                            className=" flex items-center gap-3 ps-4 py-2.5 text-sm w-full"
+                          >
                             <LogOutIcon size={16} /> Logout
                           </button>
                         </div>
