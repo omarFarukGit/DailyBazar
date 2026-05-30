@@ -28,7 +28,7 @@ const Hero = () => {
           <p className=" text-base text-white/70 leading-relaxed mb-8 max-w-md">
             {heroSectionData.description}
           </p>
-          <div>
+          <div className="flex flex-wrap gap-3">
             <Link
               href={"/products"}
               className=" px-7 py-3 bg-orange-400 text-white font-semibold rounded-full hover:bg-orange-500 transition-all flex-center gap-2 active:scale-[0.98]"
@@ -39,7 +39,7 @@ const Hero = () => {
               href={"/products"}
               className=" px-7 py-3 bg-white/10 text-white font-semibold rounded-full hover:bg-white/20 transition-all border border-white/20"
             >
-              Browse Categories  <ArrowRightIcon className="4" />
+              Browse Categories <ArrowRightIcon className="4" />
             </Link>
           </div>
         </div>
