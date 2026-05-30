@@ -18,7 +18,11 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Navbar = () => {
-  const user: any = { name: "John Deo", email: "john@exmplete", isAdmin: true };
+  const user: any = {
+    name: "John Deo",
+    email: "john@exmplete",
+    isAdmin: false,
+  };
 
   const { cartCount, setIsCartOpen } = {
     cartCount: 6,
@@ -138,7 +142,7 @@ const Navbar = () => {
                   />
                   <div className=" absolute right-2 mt-2.5 w-56 bg-white rounded-xl shadow-lg border border-orange-500 py-2 z-50 animate-fade-in">
                     {user && (
-                      <div className=" px-4 border-b border-b-orange-400">
+                      <div className=" px-4 border-b pb-2">
                         <p className=" text-sm font-medium text-zinc-900">
                           {user?.name as string}
                         </p>
